@@ -3,125 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Adriana Queiroz | Adm & Marketing</title>
-    <meta name="description" content="Profissional qualificada em Gestão Administrativa e Estratégia de Conteúdo Digital. Bacharel em Estudos de Mídia pela UFF.">
-    <meta property="og:title" content="Adriana Queiroz | Portfólio Profissional">
-    <meta property="og:description" content="Organização e criatividade para conectar marcas ao público.">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#020617">
-
+    <title>Links | Adriana Queiroz</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para a página de Bio */
+        body { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            background: #020617; /* Fundo escuro fixo */
+        }
+        .links-container { 
+            text-align: center; 
+            width: 100%; 
+            max-width: 450px; 
+            padding: 2rem 1.5rem; 
+        }
+        .profile-header { margin-bottom: 2.5rem; }
+        .profile-img { 
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%; 
+            background: linear-gradient(45deg, var(--primary), #818cf8); 
+            margin: 0 auto 1.5rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: #020617;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+        }
+        .link-item { 
+            display: block; 
+            background: var(--glass); 
+            border: 1px solid var(--border); 
+            padding: 1.2rem; 
+            border-radius: 18px; 
+            margin-bottom: 1.2rem; 
+            color: var(--text); 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+        .link-item:hover { 
+            transform: scale(1.03); 
+            border-color: var(--primary); 
+            background: rgba(56, 189, 248, 0.1); 
+        }
+        .social-row { 
+            display: flex; 
+            justify-content: center; 
+            gap: 1.5rem; 
+            margin-top: 2rem; 
+        }
+        .social-row a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .social-row a:hover { color: var(--primary); }
+    </style>
 </head>
 <body>
-
     <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="cursor-glow"></div>
-
-    <nav>
-        <div class="container nav-content">
-            <div class="logo">A<b>.</b>QUEIROZ</div>
-            <div class="nav-links">
-                <a href="#experiencia">Trajetória</a>
-                <a href="#portfolio">Portfólio</a>
-                <a href="#skills">Habilidades</a>
-                <a href="#contato" class="nav-special">Links Úteis</a>
-            </div>
+    
+    <div class="links-container">
+        <div class="profile-header">
+            <div class="profile-img">AQ</div>
+            <h2 style="margin-bottom: 0.5rem; letter-spacing: -1px;">Adriana Queiroz</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Estratégia de Conteúdo & Adm</p>
         </div>
-    </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-badge reveal">Administração & Estratégia Digital</div>
-            <h1 class="reveal">Gestão Administrativa e <span>Marketing de Conteúdo</span>.</h1>
-            <p class="hero-sub reveal">Adriana Queiroz da Costa | Profissional qualificada em organizar processos e conectar marcas ao público através do conteúdo digital.</p>
+        <div class="links-list">
+            <a href="index.html" class="link-item">✨ Ver Portfólio Completo</a>
+            <a href="https://wa.me/5521972362893" class="link-item">💬 Orçamentos via WhatsApp</a>
+            <a href="https://www.linkedin.com/in/adriana-queirozc/" class="link-item">💼 LinkedIn Profissional</a>
+            <a href="mailto:ad.queiroz.c@gmail.com" class="link-item">✉️ Enviar um E-mail</a>
         </div>
-    </header>
 
-    <main class="container">
-        <section id="experiencia" class="section">
-            <h2 class="title-tag reveal">Experiência Profissional</h2>
-            <div class="timeline">
-                <div class="timeline-card glass-card reveal">
-                    <div class="card-head">
-                        <span class="company">Masterauto Serviços e Peças</span>
-                        <span class="period">2019 — Atual</span>
-                    </div>
-                    <h3>Assistente Administrativo</h3>
-                    <p>Faturamento, emissão de notas fiscais e organização de processos com foco em eficiência operacional.</p>
-                </div>
-                <div class="timeline-card glass-card reveal">
-                    <div class="card-head">
-                        <span class="company">Autônoma</span>
-                        <span class="period">Projetos Recentes</span>
-                    </div>
-                    <h3>Estrategista de Conteúdo e Social Media</h3>
-                    <p>Planejamento de calendário editorial, roteiros estratégicos e copywriting para redes sociais.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="section">
-            <h2 class="title-tag reveal">Portfólio Criativo</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item glass-card reveal">
-                    <div class="project-placeholder">Social Media Case 01</div>
-                    <h4>Estratégia de Reels</h4>
-                    <p>Foco em engajamento e alcance orgânico.</p>
-                </div>
-                <div class="portfolio-item glass-card reveal">
-                    <div class="project-placeholder">Social Media Case 02</div>
-                    <h4>Gestão de Conteúdo</h4>
-                    <p>Posicionamento digital e análise de métricas.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section">
-            <div class="grid-skills">
-                <div class="skill-group reveal">
-                    <h2 class="title-tag">Competências Técnicas</h2>
-                    <div class="skill-item-row"><span>Copywriting & Texto</span><div class="dot-filler"></div><span>Intermediário</span></div>
-                    <div class="skill-item-row"><span>Excel & Planilhas</span><div class="dot-filler"></div><span>Intermediário</span></div>
-                    <div class="skill-item-row"><span>Social Media & Métricas</span><div class="dot-filler"></div><span>Intermediário</span></div>
-                    <div class="skill-item-row"><span>Inglês</span><div class="dot-filler"></div><span>Intermediário (B1)</span></div>
-                </div>
-                <div class="edu-group reveal">
-                    <h2 class="title-tag">Formação Acadêmica</h2>
-                    <div class="edu-card glass-card">
-                        <h3>Universidade Federal Fluminense (UFF)</h3>
-                        <p>Bacharelado em Estudos de Mídia</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contato" class="contact-action reveal">
-            <h2 style="margin-bottom: 2rem;">Vamos planejar sua próxima estratégia?</h2>
-            <div class="magnetic-wrap">
-                <a href="https://wa.me/5521972362893?text=Olá%20Adriana!%20Vi%20seu%20portfólio." class="btn-primary magnetic-btn">Chamar no WhatsApp</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="reveal">
-                <h2>Organização e criatividade em foco.</h2>
-                <a href="https://www.linkedin.com/in/adriana-queirozc/" target="_blank" class="linkedin-btn">LinkedIn Profissional</a>
-            </div>
-            <div class="footer-bottom">
-                <span>ad.queiroz.c@gmail.com</span>
-                <span>Niterói, RJ</span>
-            </div>
+        <div class="social-row">
+            <a href="#">Instagram</a>
+            <a href="#">Behance</a>
         </div>
-    </footer>
-
-    <a href="https://wa.me/5521972362893" class="whatsapp-float magnetic-btn" target="_blank">
-        <svg viewBox="0 0 32 32" class="whatsapp-icon"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.48 2.01 7.79l-2.01 7.21 7.387-1.938c2.352 1.205 5.021 1.938 7.863 1.938 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.608 0-5.061-0.695-7.185-1.905l-0.516-0.306-4.385 1.15 1.171-4.195-0.336-0.534c-1.325-2.106-2.092-4.597-2.092-7.21 0-7.363 5.989-13.352 13.352-13.352s13.352 5.989 13.352 13.352c0 7.363-5.989 13.352-13.352 13.352zM22.422 19.383c-0.354-0.177-2.092-1.033-2.417-1.152s-0.561-0.177-0.796 0.177c-0.235 0.354-0.914 1.152-1.121 1.388s-0.413 0.265-0.767 0.088c-0.354-0.177-1.493-0.551-2.845-1.757-1.052-0.938-1.761-2.097-1.967-2.451s-0.022-0.546 0.155-0.722c0.159-0.159 0.354-0.413 0.531-0.619s0.235-0.354 0.354-0.59c0.118-0.235 0.059-0.442-0.029-0.619s-0.796-1.918-1.091-2.626c-0.287-0.691-0.579-0.597-0.796-0.608-0.206-0.010-0.442-0.012-0.678-0.012s-0.619 0.088-0.943 0.442c-0.324 0.354-1.238 1.21-1.238 2.951s1.268 3.423 1.445 3.659c0.177 0.235 2.495 3.81 6.044 5.341 0.844 0.364 1.503 0.581 2.016 0.744 0.848 0.269 1.62 0.231 2.23 0.14 0.68-0.101 2.092-0.855 2.387-1.681s0.295-1.534 0.206-1.681c-0.088-0.147-0.324-0.235-0.678-0.412z"></path></svg>
-    </a>
+    </div>
 
     <script src="script.js"></script>
 </body>
