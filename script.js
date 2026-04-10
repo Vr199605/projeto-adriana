@@ -1,4 +1,3 @@
-// Efeito de revelação ao scroll
 const reveal = () => {
     const reveals = document.querySelectorAll(".reveal");
     reveals.forEach(el => {
@@ -13,7 +12,6 @@ const reveal = () => {
 window.addEventListener("scroll", reveal);
 window.onload = reveal;
 
-// Efeito de brilho seguindo o mouse
 document.addEventListener('mousemove', (e) => {
     const cursor = document.querySelector('.cursor-glow');
     if(cursor) {
