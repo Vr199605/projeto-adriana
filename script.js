@@ -1,4 +1,4 @@
-// Reveal dinâmico
+// Reveal dinâmico ao scroll
 const reveal = () => {
     document.querySelectorAll(".reveal").forEach((el, i) => {
         if (el.getBoundingClientRect().top < window.innerHeight - 80) {
@@ -13,7 +13,7 @@ window.onload = reveal;
 document.addEventListener('mousemove', (e) => {
     const { clientX: x, clientY: y } = e;
     
-    // Blobs parallax (movimento sutil)
+    // Blobs parallax
     const blob1 = document.querySelector('.blob-1');
     const blob2 = document.querySelector('.blob-2');
     if(blob1) blob1.style.transform = `translate(${x/60}px, ${y/60}px)`;
