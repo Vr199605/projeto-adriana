@@ -1,29 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links | Adriana Queiroz</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem 0; }
-        .links-container { text-align: center; width: 100%; max-width: 400px; padding: 0 1.5rem; }
-        .link-btn { display: block; background: var(--glass); border: 1px solid var(--border); padding: 1.2rem; border-radius: 15px; margin-bottom: 1rem; color: var(--text); text-decoration: none; font-weight: 600; transition: 0.3s; backdrop-filter: blur(10px); }
-        .link-btn:hover { background: var(--primary); color: var(--bg); transform: scale(1.02); }
-        .profile-img { width: 90px; height: 90px; border-radius: 50%; background: var(--primary); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; color: var(--bg); border: 3px solid var(--border); }
-    </style>
-</head>
-<body>
-    <div class="blob blob-1"></div>
-    <div class="links-container">
-        <div class="profile-img">AQ</div>
-        <h2 style="margin-bottom: 0.5rem;">Adriana Queiroz</h2>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">Adm & Marketing de Conteúdo</p>
-        
-        <a href="index.html" class="link-btn">Meu Portfólio Completo</a>
-        <a href="https://wa.me/5521972362893" class="link-btn">WhatsApp Direto</a>
-        <a href="https://www.linkedin.com/in/adriana-queirozc/" class="link-btn">LinkedIn</a>
-        <a href="mailto:ad.queiroz.c@gmail.com" class="link-btn">E-mail Profissional</a>
-    </div>
-</body>
-</html>
+:root {
+    /* Cores padrão (Dark Mode por ser um portfólio moderno) */
+    --bg: #020617;
+    --primary: #38bdf8;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --glass: rgba(30, 41, 59, 0.4);
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+/* Dark Mode Automático: Se o usuário preferir Light Mode, as cores invertem suavemente */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f8fafc;
+        --text: #020617;
+        --text-muted: #475569;
+        --glass: rgba(255, 255, 255, 0.7);
+        --border: rgba(0, 0, 0, 0.08);
+    }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { background-color: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.5s ease; overflow-x: hidden; }
+
+.blob { position: fixed; border-radius: 50%; filter: blur(80px); z-index: -1; opacity: 0.15; pointer-events: none; }
+.blob-1 { width: 400px; height: 400px; background: var(--primary); top: -10%; right: -5%; }
+.blob-2 { width: 300px; height: 300px; background: #818cf8; bottom: 10%; left: -5%; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.glass-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+
+nav { padding: 1.5rem 0; position: sticky; top: 0; z-index: 1000; background: rgba(var(--bg), 0.7); backdrop-filter: blur(15px); }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.nav-special { color: var(--primary) !important; border: 1px solid var(--primary); padding: 0.4rem 1rem; border-radius: 8px; }
+
+.hero { padding: 8rem 0 4rem; text-align: center; }
+h1 { font-size: 4rem; font-weight: 800; letter-spacing: -2px; line-height: 1.1; margin-bottom: 1.5rem; }
+h1 span { color: var(--primary); }
+.hero-sub { color: var(--text-muted); font-size: 1.2rem; max-width: 750px; margin: 0 auto; }
+
+.portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.project-placeholder { width: 100%; height: 220px; background: rgba(255,255,255,0.03); border-radius: 16px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--primary); border: 1px dashed var(--border); }
+
+.btn-primary { background: var(--primary); color: #020617; padding: 1.2rem 3.5rem; border-radius: 14px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.3s; }
+
+.whatsapp-float { position: fixed; width: 65px; height: 65px; bottom: 40px; right: 40px; background-color: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); animation: pulse 2s infinite; }
+.whatsapp-icon { width: 35px; height: 35px; fill: white; }
+
+@keyframes pulse { 0% { transform: scale(1); } 70% { transform: scale(1.05); } 100% { transform: scale(1); } }
+.reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) { h1 { font-size: 2.8rem; } .portfolio-grid { grid-template-columns: 1fr; } }
