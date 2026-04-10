@@ -13,12 +13,15 @@ window.onload = reveal;
 document.addEventListener('mousemove', (e) => {
     const { clientX: x, clientY: y } = e;
     
-    // Blobs parallax
-    document.querySelector('.blob-1').style.transform = `translate(${x/60}px, ${y/60}px)`;
-    document.querySelector('.blob-2').style.transform = `translate(${-x/60}px, ${-y/60}px)`;
+    // Blobs parallax (movimento sutil)
+    const blob1 = document.querySelector('.blob-1');
+    const blob2 = document.querySelector('.blob-2');
+    if(blob1) blob1.style.transform = `translate(${x/60}px, ${y/60}px)`;
+    if(blob2) blob2.style.transform = `translate(${-x/60}px, ${-y/60}px)`;
 
     // Glow cursor
-    document.querySelector('.cursor-glow').style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(56, 189, 248, 0.15) 0%, transparent 70%)`;
+    const glow = document.querySelector('.cursor-glow');
+    if(glow) glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(56, 189, 248, 0.15) 0%, transparent 70%)`;
 
     // Botões magnéticos
     document.querySelectorAll('.magnetic-btn').forEach(btn => {
