@@ -1,5 +1,4 @@
 :root {
-    /* Cores padrão (Dark Mode por ser um portfólio moderno) */
     --bg: #020617;
     --primary: #38bdf8;
     --text: #f8fafc;
@@ -8,49 +7,58 @@
     --border: rgba(255, 255, 255, 0.08);
 }
 
-/* Dark Mode Automático: Se o usuário preferir Light Mode, as cores invertem suavemente */
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg: #f8fafc;
-        --text: #020617;
-        --text-muted: #475569;
-        --glass: rgba(255, 255, 255, 0.7);
-        --border: rgba(0, 0, 0, 0.08);
-    }
-}
+/* Removida a inversão de cores (Light Mode) para manter sempre escuro */
 
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-body { background-color: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.5s ease; overflow-x: hidden; }
+body { background-color: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
 
+/* Blobs flutuantes */
 .blob { position: fixed; border-radius: 50%; filter: blur(80px); z-index: -1; opacity: 0.15; pointer-events: none; }
 .blob-1 { width: 400px; height: 400px; background: var(--primary); top: -10%; right: -5%; }
 .blob-2 { width: 300px; height: 300px; background: #818cf8; bottom: 10%; left: -5%; }
 
 .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
 
+/* Glassmorphism */
 .glass-card {
     background: var(--glass);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 24px;
     padding: 2rem;
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.glass-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+.glass-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
-nav { padding: 1.5rem 0; position: sticky; top: 0; z-index: 1000; background: rgba(var(--bg), 0.7); backdrop-filter: blur(15px); }
+nav { padding: 1.5rem 0; position: sticky; top: 0; z-index: 1000; background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(15px); }
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.3rem; font-weight: 800; }
+.logo b { color: var(--primary); }
+.nav-links a { color: var(--text); text-decoration: none; margin-left: 2rem; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
 .nav-special { color: var(--primary) !important; border: 1px solid var(--primary); padding: 0.4rem 1rem; border-radius: 8px; }
 
 .hero { padding: 8rem 0 4rem; text-align: center; }
-h1 { font-size: 4rem; font-weight: 800; letter-spacing: -2px; line-height: 1.1; margin-bottom: 1.5rem; }
+.hero-badge { display: inline-block; padding: 0.5rem 1.2rem; border: 1px solid var(--primary); color: var(--primary); border-radius: 99px; font-size: 0.7rem; font-weight: 700; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; }
+h1 { font-size: 4rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 1.5rem; line-height: 1.1; }
 h1 span { color: var(--primary); }
 .hero-sub { color: var(--text-muted); font-size: 1.2rem; max-width: 750px; margin: 0 auto; }
+
+.section { padding: 5rem 0; }
+.title-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary); text-transform: uppercase; margin-bottom: 3rem; letter-spacing: 3px; }
 
 .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 .project-placeholder { width: 100%; height: 220px; background: rgba(255,255,255,0.03); border-radius: 16px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--primary); border: 1px dashed var(--border); }
 
+.grid-skills { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; }
+.skill-item-row { display: flex; align-items: center; margin-bottom: 1.2rem; font-size: 0.95rem; }
+.dot-filler { flex-grow: 1; border-bottom: 1px dashed var(--border); margin: 0 1rem; opacity: 0.3; }
+
 .btn-primary { background: var(--primary); color: #020617; padding: 1.2rem 3.5rem; border-radius: 14px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.3s; }
+
+footer { padding: 8rem 0 3rem; text-align: center; border-top: 1px solid var(--border); }
+.linkedin-btn { display: inline-block; background: var(--text); color: var(--bg); padding: 1.2rem 3rem; border-radius: 12px; font-weight: 800; text-decoration: none; transition: 0.3s; }
 
 .whatsapp-float { position: fixed; width: 65px; height: 65px; bottom: 40px; right: 40px; background-color: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); animation: pulse 2s infinite; }
 .whatsapp-icon { width: 35px; height: 35px; fill: white; }
@@ -59,4 +67,4 @@ h1 span { color: var(--primary); }
 .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-@media (max-width: 768px) { h1 { font-size: 2.8rem; } .portfolio-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { h1 { font-size: 2.8rem; } .portfolio-grid, .grid-skills { grid-template-columns: 1fr; } .blob { display: none; } }
